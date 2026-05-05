@@ -1,0 +1,302 @@
+/* --- Global Styles --- */
+:root {
+    --gold: #b59410;
+    --black: #111111;
+    --white: #ffffff;
+    --soft-gray: #f9f9f9;
+}
+
+body {
+    margin: 0;
+    font-family: 'Garamond', serif; /* Classic Magazine Typography */
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Navigation --- */
+.mag-nav {
+    border-bottom: 1px solid #eaeaea;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 100;
+}
+
+.nav-container a {
+    text-decoration: none;
+    color: var(--black);
+    margin: 0 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+}
+
+.nav-session {
+    margin: 0 15px;
+    color: #666;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.is-hidden {
+    display: none !important;
+}
+
+/* --- Cover Section --- */
+.mag-cover {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                url('https://images.unsplash.com/photo-1445205170230-053b830c6050?w=1600&fit=crop&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+}
+
+.mag-cover h1 {
+    font-size: 4rem;
+    letter-spacing: 10px;
+    margin-bottom: 0;
+}
+
+/* --- Description Page --- */
+.intro-block {
+    padding: 80px 0;
+    text-align: center;
+    background: var(--soft-gray);
+}
+
+.intro-block h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+}
+
+.description-text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* --- Section Headers --- */
+.numbered-header {
+    font-size: 2.5rem;
+    border-bottom: 3px solid var(--black);
+    padding-bottom: 10px;
+    margin-top: 60px;
+}
+
+/* --- Blaster Cards --- */
+.blaster-row {
+    display: flex;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.blaster-card {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: left;
+    transition: background 0.3s;
+}
+
+.blaster-card .label {
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+/* --- 5-Image Grid & Hover --- */
+.image-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.img-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.img-wrapper img {
+    transition: transform 0.6s ease, filter 0.3s ease;
+    display: block;
+}
+
+.img-wrapper:hover img {
+    transform: scale(1.1); /* Zoom Effect */
+    filter: brightness(80%);
+}
+
+/* --- Footer --- */
+.mag-footer {
+    padding: 60px;
+    background: var(--black);
+    color: white;
+    text-align: center;
+}
+
+.mag-footer a {
+    color: var(--white);
+    margin: 0 12px;
+}
+
+/* --- Managerial Dashboard & Portal Styles --- */
+.portal-container {
+    padding: 60px 0;
+    background: var(--soft-gray);
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.plan-card {
+    background: var(--white);
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-top: 4px solid var(--gold);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.calculator-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 40px;
+    border: 1px solid var(--black);
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
+    font-family: 'Garamond', serif;
+}
+
+.btn-sync {
+    background: var(--black);
+    color: var(--white);
+    padding: 15px 30px;
+    border: none;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.btn-sync:hover {
+    background: var(--gold);
+}
+
+.result-display {
+    margin-top: 30px;
+    padding: 20px;
+    background: #e9ecef;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* --- Dashboard Analytics Styles --- */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-box {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-bottom: 3px solid var(--gold);
+}
+
+.stat-box span {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+.stat-box h3 {
+    margin: 10px 0 0 0;
+    font-size: 1.6rem;
+}
+
+.chart-wrapper {
+    background: var(--white);
+    padding: 25px;
+    border: 1px solid #eee;
+    margin-bottom: 30px;
+}
+
+/* --- Login Form --- */
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--soft-gray);
+}
+
+.remember-me-wrapper {
+    margin: 10px 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.remember-me-wrapper input {
+    width: auto;
+    margin: 0;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border: 1px solid #f5c6cb;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login-links a {
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+}
