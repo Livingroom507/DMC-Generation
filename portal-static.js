@@ -1,6 +1,10 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     if (!document.getElementById('regionalChart')) return;
-    initializePortalSession();
+
+    const authenticated = await initializePortalSession();
+    if (!authenticated) {
+        return;
+    }
 
     const dashboardData = {
         totalClicks: 14205,
@@ -20,6 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
         totalClicks.innerText = dashboardData.totalClicks.toLocaleString();
     }
 
+    const commonOptions = {
+        animation: false,
+        responsive: true,
+        maintainAspectRatio: false,
+        resizeDelay: 200
+    };
+
     new Chart(document.getElementById('regionalChart'), {
         type: 'bar',
         data: {
@@ -30,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 backgroundColor: '#b59410'
             }]
         },
-        options: { responsive: true, maintainAspectRatio: false }
+        options: commonOptions
     });
 
     new Chart(document.getElementById('contentChart'), {
@@ -42,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 backgroundColor: ['#111111', '#b59410']
             }]
         },
-        options: { responsive: true, maintainAspectRatio: false }
+        options: commonOptions
     });
 
     new Chart(document.getElementById('trendChart'), {
@@ -58,8 +69,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 tension: 0.3
             }]
         },
-        options: { responsive: true, maintainAspectRatio: false }
+        options: commonOptions
     });
+
+    document.body.classList.remove('portal-loading');
 });
 
 async function initializePortalSession() {
@@ -84,16 +97,21 @@ async function initializePortalSession() {
 
         if (!session.authenticated) {
             window.location.href = '/login.html?next=%2Fportal.html';
-            return;
+            return false;
         }
 
         if (username && session.username) {
             username.textContent = `Signed in as ${session.username}`;
         }
+
+        return true;
     } catch {
         if (username) {
             username.textContent = 'Session unavailable';
         }
+
+        document.body.classList.remove('portal-loading');
+        return true;
     }
 }
 

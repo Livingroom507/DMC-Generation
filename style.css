@@ -13,6 +13,10 @@ body {
     color: var(--black);
 }
 
+body.portal-loading {
+    visibility: hidden;
+}
+
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -257,6 +261,35 @@ body {
     padding: 25px;
     border: 1px solid #eee;
     margin-bottom: 30px;
+    position: relative;
+    min-height: 360px;
+}
+
+.chart-wrapper-wide {
+    min-height: 420px;
+}
+
+.chart-wrapper-compact {
+    min-height: 420px;
+}
+
+.chart-wrapper-trend {
+    min-height: 380px;
+}
+
+.chart-wrapper canvas {
+    display: block;
+    width: 100% !important;
+    height: 300px !important;
+}
+
+.chart-wrapper-wide canvas,
+.chart-wrapper-compact canvas {
+    height: 340px !important;
+}
+
+.chart-wrapper-trend canvas {
+    height: 320px !important;
 }
 
 /* --- Login Form --- */

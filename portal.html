@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
-<body>
+<body class="portal-loading">
     <nav class="mag-nav">
         <div class="nav-container">
             <a href="index.html">MAGAZINE HOME</a>
@@ -45,17 +45,17 @@
             </div>
 
             <div class="blaster-row">
-                <div class="chart-wrapper" style="flex: 2;">
+                <div class="chart-wrapper chart-wrapper-wide" style="flex: 2;">
                     <h4>Regional Engagement (Clicks)</h4>
                     <canvas id="regionalChart"></canvas>
                 </div>
-                <div class="chart-wrapper" style="flex: 1;">
+                <div class="chart-wrapper chart-wrapper-compact" style="flex: 1;">
                     <h4>Interest Split: Practical vs Managerial</h4>
                     <canvas id="contentChart"></canvas>
                 </div>
             </div>
 
-            <div class="chart-wrapper">
+            <div class="chart-wrapper chart-wrapper-trend">
                 <h4>Lead Generation Trend (2-Week Outlook)</h4>
                 <canvas id="trendChart"></canvas>
             </div>
