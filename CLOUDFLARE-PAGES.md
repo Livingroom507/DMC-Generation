@@ -27,6 +27,8 @@ Add these encrypted secrets in your Pages project settings for both Preview and 
 - `ADMIN_PASSWORD`
 - `SESSION_SECRET`
 
+These are configured in the Cloudflare Pages dashboard, not in `wrangler.toml`.
+
 ## Deploy notes
 
 - Build output directory: `public`
